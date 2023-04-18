@@ -17,6 +17,8 @@ The following technologies and libraries were used in the development:
 - [ts-node-dev](https://github.com/wclr/ts-node-dev)
 - [typescript](https://github.com/Microsoft/TypeScript)
 - [axios](https://github.com/axios/axios)
+- [handlebars](https://github.com/handlebars-lang/handlebars.js)
+- [puppeteer](https://pptr.dev/)
 
 #### Common
 > `/status`

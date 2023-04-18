@@ -1,3 +1,4 @@
 import { genUrlConfiguration } from "./GenUrlConfiguration";
+import { pdfGenerator } from "./PDFGenerator";
 
-export { genUrlConfiguration };
+export { genUrlConfiguration, pdfGenerator };
