@@ -5,7 +5,8 @@ import bodyParser from "body-parser";
 const app: Application = express();
 const PORT = process.env.PORT || 9987;
 
-import { getWorkStatus } from "./modules";
+import { getWorkStatus, getResume } from "./modules";
+import { verificationGetResume } from "./middleware";
 
 // configuration
 app.use(cors());
@@ -14,6 +15,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // common
 app.get("/status", getWorkStatus);
+
+// GET
+app.get("/getResume", verificationGetResume, getResume);
 
 // listener
 app.listen(PORT, (): void => {

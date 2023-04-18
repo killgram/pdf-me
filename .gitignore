@@ -106,3 +106,5 @@ dist
 # Custom
 package-lock.json
 .idea
+src/configurations/Keys.ts
+src/configurations/UrlConfiguration.ts

@@ -1,3 +1,4 @@
 import { getWorkStatus } from "./GetWorkStatus";
+import { getResume } from "./GetResume";
 
-export { getWorkStatus };
+export { getWorkStatus, getResume };
