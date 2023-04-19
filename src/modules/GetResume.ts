@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { getResumeDataService } from "../services";
-import { LanguageEnum } from "../configurations";
+import { LanguageEnum, UrlConfiguration } from "../configurations";
 import { pdfGenerator } from "../utils";
 const fs = require("fs");
 
@@ -20,7 +20,7 @@ const getResume = async (
 ) => {
   const { lang, size } = req.query;
   const data = await getResumeDataService(lang, size);
-  const pdfPath = await pdfGenerator(data);
+  const pdfPath = await pdfGenerator(data, size);
 
   const file = fs.createReadStream(pdfPath);
   const stat = fs.statSync(pdfPath);
@@ -28,7 +28,7 @@ const getResume = async (
   res.setHeader("Content-Type", "application/pdf");
   res.setHeader(
     "Content-Disposition",
-    `attachment; filename=${data.lang}-${data.type}.pdf`
+    `attachment; filename=${UrlConfiguration.patientName}-${data.lang}-${data.type}.pdf`
   );
   file.pipe(res);
 };

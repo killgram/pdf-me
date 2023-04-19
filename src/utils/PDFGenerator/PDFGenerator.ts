@@ -1,11 +1,13 @@
+import { UrlConfiguration } from "../../configurations";
+
 const fs = require("fs");
 const path = require("path");
 const puppeteer = require("puppeteer");
 const handlebars = require("handlebars");
 
-const pdfGenerator = async (data: any) => {
+const pdfGenerator = async (data: any, size: "small" | "full") => {
   const templateHtml = fs.readFileSync(
-    path.join(process.cwd(), "src/templates/temp.html"),
+    path.join(process.cwd(), `src/templates/${size}.html`),
     "utf8"
   );
 
@@ -14,7 +16,7 @@ const pdfGenerator = async (data: any) => {
 
   const pdfPath = path.join(
     process.cwd(),
-    `src/pdf/${data.lang}-${data.type}.pdf`
+    `src/pdf/${UrlConfiguration.patientName}-${data.lang}-${data.type}.pdf`
   );
 
   const browser = await puppeteer.launch({ args: ["--no-sandbox"] });
