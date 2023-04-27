@@ -13,4 +13,17 @@ const genCommonResourcesUrlConfiguration = () => {
   return `${UrlConfiguration.githubUrl}/${UrlConfiguration.githubCommon}?ref=${UrlConfiguration.githubRef}&access_token=${Keys.githubAccessToken}`;
 };
 
-export { genUrlConfiguration, genCommonResourcesUrlConfiguration };
+const genHbsUrlConfiguration = (size: "small" | "full") => {
+  const localSize =
+    size === "small"
+      ? UrlConfiguration.gitHbsSmall
+      : UrlConfiguration.gitHbsFull;
+
+  return `${UrlConfiguration.githubUrl}/${localSize}?ref=${UrlConfiguration.githubRef}&access_token=${Keys.githubAccessToken}`;
+};
+
+export {
+  genUrlConfiguration,
+  genCommonResourcesUrlConfiguration,
+  genHbsUrlConfiguration,
+};

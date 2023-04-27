@@ -1,6 +1,11 @@
 import {
   genUrlConfiguration,
   genCommonResourcesUrlConfiguration,
+  genHbsUrlConfiguration,
 } from "./genUrlConfiguration";
 
-export { genUrlConfiguration, genCommonResourcesUrlConfiguration };
+export {
+  genUrlConfiguration,
+  genCommonResourcesUrlConfiguration,
+  genHbsUrlConfiguration,
+};

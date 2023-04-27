@@ -1,6 +1,7 @@
 import {
   genUrlConfiguration,
   genCommonResourcesUrlConfiguration,
+  genHbsUrlConfiguration,
 } from "./GenUrlConfiguration";
 import { pdfGenerator } from "./PDFGenerator";
 import { genSkills } from "./GenSkills";
@@ -18,4 +19,5 @@ export {
   countForm,
   calcExperienceDuration,
   calcTotalExp,
+  genHbsUrlConfiguration,
 };
