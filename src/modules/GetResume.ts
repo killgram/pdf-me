@@ -1,5 +1,9 @@
 import { Request, Response } from "express";
-import { getResumeDataService } from "../services";
+import {
+  getCommonResourcesService,
+  getPersonalizeService,
+  getResumeDataService,
+} from "../services";
 import { LanguageEnum, UrlConfiguration } from "../configurations";
 import { pdfGenerator } from "../utils";
 const fs = require("fs");
@@ -20,7 +24,9 @@ const getResume = async (
 ) => {
   const { lang, size } = req.query;
   const data = await getResumeDataService(lang, size);
-  const pdfPath = await pdfGenerator(data, size);
+  const commonData = await getCommonResourcesService();
+  const personalizeData = await getPersonalizeService();
+  const pdfPath = await pdfGenerator(data, commonData, personalizeData, size);
 
   const file = fs.createReadStream(pdfPath);
   const stat = fs.statSync(pdfPath);

@@ -9,4 +9,8 @@ const genUrlConfiguration = (lang: LanguageEnum, size: "small" | "full") => {
   return `${UrlConfiguration.githubUrl}/${lang}/${localSize}?ref=${UrlConfiguration.githubRef}&access_token=${Keys.githubAccessToken}`;
 };
 
-export { genUrlConfiguration };
+const genCommonResourcesUrlConfiguration = () => {
+  return `${UrlConfiguration.githubUrl}/${UrlConfiguration.githubCommon}?ref=${UrlConfiguration.githubRef}&access_token=${Keys.githubAccessToken}`;
+};
+
+export { genUrlConfiguration, genCommonResourcesUrlConfiguration };
