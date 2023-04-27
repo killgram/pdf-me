@@ -7,6 +7,7 @@ import { genSkills } from "./GenSkills";
 import { calculateData } from "./CalculateData";
 import { countForm } from "./CountForm";
 import { calcExperienceDuration } from "./CalcExperienceDuration";
+import { calcTotalExp } from "./CalcTotalExp";
 
 export {
   genUrlConfiguration,
@@ -16,4 +17,5 @@ export {
   calculateData,
   countForm,
   calcExperienceDuration,
+  calcTotalExp,
 };

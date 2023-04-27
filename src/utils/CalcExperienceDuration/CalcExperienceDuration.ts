@@ -29,7 +29,7 @@ const calcExperienceDuration = (
     } else {
       totalMonthNumber = item.time.total;
     }
-    totalMonth = `${totalMonthNumber} ${countForm(item.time.total, [
+    totalMonth = `${totalMonthNumber} ${countForm(totalMonthNumber, [
       monthForm.t1,
       monthForm.t2,
       monthForm.t3,
