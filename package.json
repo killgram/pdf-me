@@ -27,6 +27,7 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "handlebars": "^4.7.7",
+    "morgan": "^1.10.0",
     "prettier": "^2.8.7",
     "puppeteer": "^19.9.1",
     "puppeteer-core": "^19.9.1",

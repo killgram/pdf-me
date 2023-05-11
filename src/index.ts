@@ -1,6 +1,7 @@
 import express, { Application } from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
+const morgan = require("morgan");
 
 const app: Application = express();
 const PORT = process.env.PORT || 9987;
@@ -12,6 +13,7 @@ import { verificationGetResume } from "./middleware";
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(morgan("dev")); // logger
 
 // common
 app.get("/status", getWorkStatus);
