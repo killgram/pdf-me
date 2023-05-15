@@ -4,8 +4,6 @@ import { calculateData } from "../CalculateData";
 import { calcExperienceDuration } from "../CalcExperienceDuration";
 import { calcTotalExp } from "../CalcTotalExp";
 import { getHbsTemplateService } from "../../services";
-
-const fs = require("fs");
 const path = require("path");
 const puppeteer = require("puppeteer");
 const handlebars = require("handlebars");
@@ -16,10 +14,6 @@ const pdfGenerator = async (
   personalizeData: any,
   size: "small" | "full"
 ): Promise<string> => {
-  // const templateHtml = fs.readFileSync(
-  //   path.join(process.cwd(), `src/templates/${size}.hbs`),
-  //   "utf8"
-  // );
   const templateHtml = await getHbsTemplateService(size);
 
   const skills: string[] = await genSkills();
