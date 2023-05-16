@@ -19,6 +19,16 @@ The following technologies and libraries were used in the development:
 - [axios](https://github.com/axios/axios)
 - [handlebars](https://github.com/handlebars-lang/handlebars.js)
 - [puppeteer](https://pptr.dev/)
+- [morgan](https://www.npmjs.com/package/morgan)
 
 #### Common
 > `/status`
+
+#### GET
+> `/getResume`
+
+| Parameter       | Type     | Description                        |
+|:----------------|:---------|:-----------------------------------|
+| `lang`          | `string` | **Required**. Language             |
+| `size`          | `string` | **Required**. Resume size          |
+| `Authorization` | `Bearer` | **Required**. Header, access token |
