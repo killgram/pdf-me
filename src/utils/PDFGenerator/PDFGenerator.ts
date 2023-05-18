@@ -45,24 +45,30 @@ const pdfGenerator = async (
     process.cwd(),
     `src/pdf/${UrlConfiguration.patientName}-${data.lang}-${data.type}.pdf`
   );
-  const browser = await puppeteer.launch({
-    args: ["--no-sandbox"],
-  });
-  const page = await browser.newPage();
-  await page.setContent(html);
 
-  await page.pdf({
-    path: pdfPath,
-    displayHeaderFooter: false,
-    headerTemplate: "",
-    format: "A4",
-    printBackground: true,
-    margin: {
-      bottom: 45,
-      top: 45,
-    },
-  });
-  await browser.close();
+  try {
+    const browser = await puppeteer.launch({
+      args: ["--no-sandbox"],
+    });
+    const page = await browser.newPage();
+    await page.setContent(html);
+
+    await page.pdf({
+      path: pdfPath,
+      displayHeaderFooter: false,
+      headerTemplate: "",
+      format: "A4",
+      printBackground: true,
+      margin: {
+        bottom: 45,
+        top: 45,
+      },
+    });
+    await browser.close();
+  } catch (e) {
+    console.log(e);
+  }
+
   return pdfPath;
 };
 
